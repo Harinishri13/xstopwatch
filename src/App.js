@@ -11,8 +11,6 @@ function Stopwatch() {
       interval = setInterval(() => {
         setTime((prevTime) => prevTime + 1);
       }, 1000);
-    } else {
-      clearInterval(interval);
     }
 
     return () => clearInterval(interval);
@@ -37,8 +35,7 @@ function Stopwatch() {
     <div>
       <h1>Stopwatch</h1>
       <div>
-        <h2>Time</h2>
-        <div>{formatTime(time)}</div>
+        <h2>Time: {formatTime(time)}</h2>
       </div>
       <div>
         <button onClick={handleStartStop}>
